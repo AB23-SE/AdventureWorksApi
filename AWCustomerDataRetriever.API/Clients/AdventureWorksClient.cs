@@ -34,7 +34,10 @@ namespace AWCustomerDataRetriever.API.Clients
         {
             HttpRequestMessage message = new HttpRequestMessage(method, ApiUrl + endpoint);
 
+            //we're expecting a response back in JSON
             message.Headers.Add("ContentType", "application/json");
+           
+            //basic authentication
             message.Headers.Add("Authorization", "Basic " + Convert.ToBase64String(Encoding.ASCII.GetBytes($"{ApiUsername}:{ApiPassword}")));
             
             using (HttpResponseMessage response = await _httpclient.SendAsync(message))
@@ -43,6 +46,7 @@ namespace AWCustomerDataRetriever.API.Clients
 
                 if (response.IsSuccessStatusCode)
                 {
+                    //handle DateTimeZone with local format
                     return JsonConvert.DeserializeObject<TResponseModel>(responseString, new JsonSerializerSettings()
                     {
                         DateTimeZoneHandling = DateTimeZoneHandling.Local

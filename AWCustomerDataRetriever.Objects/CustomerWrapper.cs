@@ -8,6 +8,7 @@ namespace AWCustomerDataRetriever.Objects
 {
     public class CustomerWrapper
     {
+        //Total number of records should be the number of items in the array
         public int TotalRecords { get; set; }
         public Customer[] Data { get; set; }
     }

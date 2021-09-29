@@ -53,7 +53,6 @@ namespace AWCustomerData.Test
         [TestMethod]
         public async Task Task_IsNotNull()
         {
-            // ARRANGE
             Mock<HttpMessageHandler> handlerMock = GenerateMock();
 
             // use real http client with mocked handler here
@@ -119,8 +118,5 @@ namespace AWCustomerData.Test
 
             return handlerMock;
         }
-
-
-
     }
 }

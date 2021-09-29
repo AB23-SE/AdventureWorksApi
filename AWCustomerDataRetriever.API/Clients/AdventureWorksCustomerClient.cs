@@ -17,6 +17,7 @@ namespace AWCustomerDataRetriever.API.Clients
 
         public Task<CustomerWrapper> GetCustomers()
         {
+            //endpoint to retrieve customers
            return ExecuteAsync<CustomerWrapper>(HttpMethod.Get, "v1/customers");
         }
     }

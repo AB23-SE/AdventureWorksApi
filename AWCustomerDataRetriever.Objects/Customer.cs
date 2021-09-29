@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace AWCustomerDataRetriever.Objects
 {
+    //Customer Details
     public class Customer
     {
         public int Id { get; set; }
